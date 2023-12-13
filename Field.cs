@@ -1,7 +1,13 @@
 ﻿// класс поля
 internal class Field
 {
-    // тут организовать синглтон и хранение ячеек в свойстве Cells
+    private static Field instance;
+    public static Field getInstance()
+    {
+        if (instance == null)
+            instance = new Field();
+        return instance;
+    }// тут организовать синглтон и хранение ячеек в свойстве Cells
 
     public int[,] Cells { get; set; }
 
