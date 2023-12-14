@@ -7,7 +7,7 @@ internal class Robot
     { }
     internal int[] robotCoordinates {get; set;}
 
-    public static Robot getInstance()
+    public static Robot GetInstance()
     { 
         if (instance == null)
             instance = new Robot();
