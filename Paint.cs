@@ -7,7 +7,8 @@ internal class Paint
 
     static Paint instance;
 
-    private Paint() {
+    private Paint()
+    {
         graphics = Graphics.FromHwnd(Process.GetCurrentProcess().MainWindowHandle); ;
     }
 
