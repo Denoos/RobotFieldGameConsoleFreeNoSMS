@@ -21,7 +21,7 @@ internal class RobotCommander : ICommander
 
     void RunCommand(object obj)
     {
-        while (!Field.GetInstance().CheckRobotEndGame(Robot.GetInstance())) 
+        while (!Field.GetInstance().CheckRobotEndGame(Robot.GetInstance()))
         {
             Thread.Sleep(1000);
             if (robotCommands.Count > 0)

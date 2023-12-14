@@ -9,7 +9,7 @@ internal class FieldCommander : ICommander
     public FieldCommander()
     {
     }
-    
+
     public void Execute(int[] value)
     {
         Paint paint = Paint.GetInstance();// получение ссылки на Graphics для рисования
@@ -21,15 +21,18 @@ internal class FieldCommander : ICommander
         for (int i = 0; i < 5; i++)
             for (int j = 0; j < 5; j++)
             {
-                array1[i, j] = value[a];
+                array1[i, j] = value[a] - 48;
                 a++;
             }// в 25 ячеек преобразовываем в двумерный массив 5х5)
+
+        Field.GetInstance().Cells = array1;
+
         Console.WriteLine();
         int[] rc = new int[2];
         for (int i = 0; i < 5; i++)
         {
             for (int j = 0; j < 5; j++)
-                Console.Write(array1[i, j] - 48 + " ");
+                Console.Write(array1[i, j] + " ");
             Console.WriteLine();
         }
         // в объект Robot заносятся координаты
@@ -40,6 +43,6 @@ internal class FieldCommander : ICommander
                     rc[0] = i;
                     rc[1] = j;
                     robot.robotCoordinates = rc;
-                }       
+                }
     }
 }

@@ -15,8 +15,8 @@ internal class Controller
     // цикл по запросу команды
     internal void StartListner()
     {
-        bool konecNigga = true;
-        Console.WriteLine("2 - непреадолимое для самурая препятствие, 1 - пустое место в жизни самурая , 3 - дом где растили самурая, 4 - цель жизни самурая");
+        bool gameIsGoing = true;
+        Console.WriteLine("1 - свободный путь в достижении цели, 2 - непреодолимое для самурая препятствие, 3 - самурай, 4 - цель жизни самурая");
         Console.WriteLine("Введите 25 символов для определения места рождения самурая");
         int[] array = new int[25];
         for (int i = 0; i < array.Length; i++)
@@ -29,10 +29,9 @@ internal class Controller
 
         mainCommander.SetInterpretator( new RobotCommander());// смена интерпретатора у mainCommander на RobotCommander
 
-        while (konecNigga)
+        Console.WriteLine("Выберите следующее действие в достижении цели Самурая");
+        while (gameIsGoing)
         {
-            
-            Console.WriteLine("Выберите следующее действие в достижении цели Самурая");
             int.TryParse(Console.ReadLine(), out int g);
             mainCommander.Execute(new int[] { g });
         }// остальные запросы передаются туда же (цикл, пока робот не достигнет конечной точки)
